@@ -1,0 +1,32 @@
+server:
+   port: 7878
+    
+app:
+   name: Configuration and Validation App
+   
+my:
+   greeting: Welcome to ${app.name}! Using YAML on config server!
+   list:
+      values: one,two,three
+      
+   map: 
+      values: "{key1: 'value1', key2: 'value2', key2: 'value2'}"
+     
+db:
+   connection: jdbc:mysql://localhost/dev-on-config-server
+   host: localhost
+   port: 8080
+
+
+            
+# Spring Boot Actuator exposes an end-point in the Spring Boot application,
+# where you can get all the configuration properties set either by yourself,
+# or by the Spring Framework itself: http://localhost:7878/actuator/configprops  
+management.endpoints.web.exposure.include: "*"
+
+logging:
+    level:
+       org:
+          springframework: DEBUG
+          
+spring.profiles.active: test          
