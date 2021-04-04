@@ -1,0 +1,2 @@
+my:
+   greeting: Welcome to ${app.name}! Using YAML spring-boot-config-client on config server!
